@@ -16,12 +16,14 @@ import {
 } from 'landricks-components';
 
 // Import Images
-import background from '../../images/background.jpg';
+import background from '../../images/background_mirror.jpg';
 
 // Material
 import RaisedButton from 'material-ui/RaisedButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import TextField from 'material-ui/TextField';
+
 
 import BoolLogoSvg from '../../../App/IconSvg'
 
@@ -76,8 +78,8 @@ const LIGHT_BAND_THEME = {
 
 const styles = {
   homePageContainer:{
-    background: 'url("http://content.mysupermarket.co.il/Content/HomePage/Images/HP-BG.jpg") no-repeat center',
-    textAlign:'center',
+    background: `url("${background}") no-repeat center`,
+    // textAlign:'center',
     height:'100%'
   },
   logo:{
@@ -108,10 +110,11 @@ const styles = {
     // fontWeight:"bold"
   },
   callForAction:{
-    color:'#71A2B6'
+    // backgroundColor:'#71A2B6',
+    // color:'#FFFFFF'
   },
   callForActionContainer:{
-    marginTop:'60px'
+    marginTop:'35px'
   },
   logoContainer:{
 
@@ -119,7 +122,7 @@ const styles = {
   logoTitleContainer:{
     display:'flex',
     alignItems:'center',
-    justifyContent:'center'
+    marginTop: '90px'
   },
   logoImage:{
     height:'90px'
@@ -137,9 +140,12 @@ const styles = {
 class LandingPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      callToActionText:'Let me know when it\'s ready...',
+      email:''
+    };
 
-    this.goToWizard = this.goToWizard.bind(this);
+    this.registerUser = this.registerUser.bind(this);
   }
 
   getChildContext() {
@@ -152,8 +158,16 @@ class LandingPage extends Component {
     this.context.mixpanel.track('LandingPage login',{'ab_version':'v1'});
   }
 
-  goToWizard(){
-    this.context.mixpanel.track('LandingPage login');
+  emailHasChanged(email){
+    this.state.email = email;
+  }
+
+  registerUser(){
+    this.setState({callToActionText: 'Sent'});
+    this.context.mixpanel.track('Register email',{
+      'ab_version':'v1',
+      'email':this.state.email,
+    });
   }
 
   render() {
@@ -172,7 +186,7 @@ class LandingPage extends Component {
               <div style={styles.logoTitleContainer} >
                 <img src={logoImageWhite} style={styles.logoImage} />
               </div>
-              <div style={styles.logoTagline}>Find out if products matches your exact taste</div>
+              {/*<div style={styles.logoTagline}>Find out if products matches your exact taste</div>*/}
             </div>
             <div style={styles.callForActionContainer}>
               <div style={{
@@ -181,16 +195,24 @@ class LandingPage extends Component {
               <div style={{
                 fontSize:'20px',
                 marginBottom:'20px'
-              }}>Easy to understand if it's fits for you</div>
-              <Link to={'/wizard'} style={styles.callForAction}>
+              }}>Easy to understand if it's fits for you or not</div>
+              <div style={{
+                fontSize:'14px',
+                marginBottom:'10px'
+              }}>Coming soon</div>
+              {/*<Link to={'/wizard'} style={styles.callForAction}>*/}
+              <TextField
+                hintText="Email"
+                onChange={this.emailHasChanged()}
+              />
               <CallToAction
                 wrapperStyle={{
-                  backgroundColor:'white',
-                  color:'#71A2B6'
+                  backgroundColor:'#71A2B6',
+                  color:'white'
                 }}
-                label="Get started"
-                onClick={this.goToWizard}/>
-            </Link>
+                label={this.state.callToActionText}
+                onClick={this.registerUser}/>
+            {/*</Link>*/}
             </div>
             {/*<div style={{*/}
               {/*textAlign: 'center',*/}

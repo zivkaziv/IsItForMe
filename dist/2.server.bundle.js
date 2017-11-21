@@ -45,9 +45,9 @@ exports.modules = {
 	
 	var _landricksComponents = __webpack_require__(111);
 	
-	var _background = '/' + "2caa7ab318c0e290315b2e5d1ea02f76.jpg";
+	var _background_mirror = '/' + "17d5c018528c84eac956cfcf1f56b896.jpg";
 	
-	var _background2 = _interopRequireDefault(_background);
+	var _background_mirror2 = _interopRequireDefault(_background_mirror);
 	
 	var _RaisedButton = __webpack_require__(44);
 	
@@ -60,6 +60,10 @@ exports.modules = {
 	var _lightBaseTheme = __webpack_require__(45);
 	
 	var _lightBaseTheme2 = _interopRequireDefault(_lightBaseTheme);
+	
+	var _TextField = __webpack_require__(10);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
 	
 	var _IconSvg = __webpack_require__(51);
 	
@@ -89,7 +93,7 @@ exports.modules = {
 	  primaryColor: '#000000',
 	  primaryContrastColor: '#71A2B6',
 	  objectDesign: 'square-solid',
-	  backgroundImage: '' + _background2.default
+	  backgroundImage: '' + _background_mirror2.default
 	});
 	
 	var HEAVY_BAND_THEME = _extends({}, BASE_THEME, {
@@ -111,8 +115,8 @@ exports.modules = {
 	
 	var styles = {
 	  homePageContainer: {
-	    background: 'url("http://content.mysupermarket.co.il/Content/HomePage/Images/HP-BG.jpg") no-repeat center',
-	    textAlign: 'center',
+	    background: 'url("' + _background_mirror2.default + '") no-repeat center',
+	    // textAlign:'center',
 	    height: '100%'
 	  },
 	  logo: {
@@ -143,16 +147,17 @@ exports.modules = {
 	    // fontWeight:"bold"
 	  },
 	  callForAction: {
-	    color: '#71A2B6'
+	    // backgroundColor:'#71A2B6',
+	    // color:'#FFFFFF'
 	  },
 	  callForActionContainer: {
-	    marginTop: '60px'
+	    marginTop: '35px'
 	  },
 	  logoContainer: {},
 	  logoTitleContainer: {
 	    display: 'flex',
 	    alignItems: 'center',
-	    justifyContent: 'center'
+	    marginTop: '90px'
 	  },
 	  logoImage: {
 	    height: '90px'
@@ -175,9 +180,12 @@ exports.modules = {
 	
 	    var _this = _possibleConstructorReturn(this, (LandingPage.__proto__ || Object.getPrototypeOf(LandingPage)).call(this, props));
 	
-	    _this.state = {};
+	    _this.state = {
+	      callToActionText: 'Let me know when it\'s ready...',
+	      email: ''
+	    };
 	
-	    _this.goToWizard = _this.goToWizard.bind(_this);
+	    _this.registerUser = _this.registerUser.bind(_this);
 	    return _this;
 	  }
 	
@@ -194,9 +202,18 @@ exports.modules = {
 	      this.context.mixpanel.track('LandingPage login', { 'ab_version': 'v1' });
 	    }
 	  }, {
-	    key: 'goToWizard',
-	    value: function goToWizard() {
-	      this.context.mixpanel.track('LandingPage login');
+	    key: 'emailHasChanged',
+	    value: function emailHasChanged(email) {
+	      this.state.email = email;
+	    }
+	  }, {
+	    key: 'registerUser',
+	    value: function registerUser() {
+	      this.setState({ callToActionText: 'Sent' });
+	      this.context.mixpanel.track('Register email', {
+	        'ab_version': 'v1',
+	        'email': this.state.email
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -221,11 +238,6 @@ exports.modules = {
 	                'div',
 	                { style: styles.logoTitleContainer },
 	                _react2.default.createElement('img', { src: _logo_trans2.default, style: styles.logoImage })
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { style: styles.logoTagline },
-	                'Find out if products matches your exact taste'
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -244,19 +256,27 @@ exports.modules = {
 	                    fontSize: '20px',
 	                    marginBottom: '20px'
 	                  } },
-	                'Easy to understand if it\'s fits for you'
+	                'Easy to understand if it\'s fits for you or not'
 	              ),
 	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/wizard', style: styles.callForAction },
-	                _react2.default.createElement(_landricksComponents.CallToAction, {
-	                  wrapperStyle: {
-	                    backgroundColor: 'white',
-	                    color: '#71A2B6'
-	                  },
-	                  label: 'Get started',
-	                  onClick: this.goToWizard })
-	              )
+	                'div',
+	                { style: {
+	                    fontSize: '14px',
+	                    marginBottom: '10px'
+	                  } },
+	                'Coming soon'
+	              ),
+	              _react2.default.createElement(_TextField2.default, {
+	                hintText: 'Email',
+	                onChange: this.emailHasChanged()
+	              }),
+	              _react2.default.createElement(_landricksComponents.CallToAction, {
+	                wrapperStyle: {
+	                  backgroundColor: '#71A2B6',
+	                  color: 'white'
+	                },
+	                label: this.state.callToActionText,
+	                onClick: this.registerUser })
 	            )
 	          )
 	        ),

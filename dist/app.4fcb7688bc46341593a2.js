@@ -109,7 +109,7 @@ webpackJsonp([4],[
 	exports.default = routerWarning;
 	exports._resetWarned = _resetWarned;
 	
-	var _warning = __webpack_require__(66);
+	var _warning = __webpack_require__(65);
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
@@ -200,7 +200,7 @@ webpackJsonp([4],[
 	
 	exports.__esModule = true;
 	
-	var _assign = __webpack_require__(279);
+	var _assign = __webpack_require__(277);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
@@ -1283,29 +1283,6 @@ webpackJsonp([4],[
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	'use strict';
-	
-	exports.__esModule = true;
-	exports.connect = exports.Provider = undefined;
-	
-	var _Provider = __webpack_require__(659);
-	
-	var _Provider2 = _interopRequireDefault(_Provider);
-	
-	var _connect = __webpack_require__(660);
-	
-	var _connect2 = _interopRequireDefault(_connect);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-	
-	exports.Provider = _Provider2["default"];
-	exports.connect = _connect2["default"];
-
-/***/ },
-/* 66 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
 	/**
 	 * Copyright 2014-2015, Facebook, Inc.
 	 * All rights reserved.
@@ -1367,6 +1344,29 @@ webpackJsonp([4],[
 	
 	module.exports = warning;
 
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	'use strict';
+	
+	exports.__esModule = true;
+	exports.connect = exports.Provider = undefined;
+	
+	var _Provider = __webpack_require__(659);
+	
+	var _Provider2 = _interopRequireDefault(_Provider);
+	
+	var _connect = __webpack_require__(660);
+	
+	var _connect2 = _interopRequireDefault(_connect);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	exports.Provider = _Provider2["default"];
+	exports.connect = _connect2["default"];
 
 /***/ },
 /* 67 */
@@ -4064,7 +4064,8 @@ webpackJsonp([4],[
 	};
 
 /***/ },
-/* 91 */
+/* 91 */,
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4083,7 +4084,7 @@ webpackJsonp([4],[
 	exports.darken = darken;
 	exports.lighten = lighten;
 	
-	var _warning = __webpack_require__(66);
+	var _warning = __webpack_require__(65);
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
@@ -4312,7 +4313,6 @@ webpackJsonp([4],[
 	}
 
 /***/ },
-/* 92 */,
 /* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -6176,7 +6176,7 @@ webpackJsonp([4],[
 	
 	var _colors = __webpack_require__(80);
 	
-	var _colorManipulator = __webpack_require__(91);
+	var _colorManipulator = __webpack_require__(92);
 	
 	var _spacing = __webpack_require__(217);
 	
@@ -6235,7 +6235,7 @@ webpackJsonp([4],[
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _colorManipulator = __webpack_require__(91);
+	var _colorManipulator = __webpack_require__(92);
 	
 	var _lightBaseTheme = __webpack_require__(153);
 	
@@ -12604,7 +12604,7 @@ webpackJsonp([4],[
 	
 	exports.__esModule = true;
 	
-	var _defineProperty = __webpack_require__(280);
+	var _defineProperty = __webpack_require__(278);
 	
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 	
@@ -13116,6 +13116,18 @@ webpackJsonp([4],[
 /* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = { "default": __webpack_require__(347), __esModule: true };
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(349), __esModule: true };
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 	'use strict';
 	
@@ -13178,7 +13190,7 @@ webpackJsonp([4],[
 	exports.default = AppReducer;
 
 /***/ },
-/* 278 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -13240,18 +13252,6 @@ webpackJsonp([4],[
 	};
 	
 	exports.default = Header;
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(347), __esModule: true };
-
-/***/ },
-/* 280 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(349), __esModule: true };
 
 /***/ },
 /* 281 */
@@ -13892,7 +13892,7 @@ webpackJsonp([4],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRedux = __webpack_require__(65);
+	var _reactRedux = __webpack_require__(66);
 	
 	var _reactRouter = __webpack_require__(93);
 	
@@ -14011,7 +14011,7 @@ webpackJsonp([4],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRedux = __webpack_require__(65);
+	var _reactRedux = __webpack_require__(66);
 	
 	var _App = __webpack_require__(397);
 	
@@ -14025,7 +14025,7 @@ webpackJsonp([4],[
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _Header = __webpack_require__(278);
+	var _Header = __webpack_require__(280);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
@@ -14245,7 +14245,7 @@ webpackJsonp([4],[
 	
 	var _reactIntl = __webpack_require__(67);
 	
-	var _reactRedux = __webpack_require__(65);
+	var _reactRedux = __webpack_require__(66);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -14437,7 +14437,7 @@ webpackJsonp([4],[
 	
 	var _redux = __webpack_require__(152);
 	
-	var _AppReducer = __webpack_require__(277);
+	var _AppReducer = __webpack_require__(279);
 	
 	var _AppReducer2 = _interopRequireDefault(_AppReducer);
 	
@@ -34127,7 +34127,7 @@ webpackJsonp([4],[
 	
 	var _colors = __webpack_require__(80);
 	
-	var _colorManipulator = __webpack_require__(91);
+	var _colorManipulator = __webpack_require__(92);
 	
 	var _spacing = __webpack_require__(217);
 	
@@ -34298,7 +34298,7 @@ webpackJsonp([4],[
 	
 	var _autoprefixerStatic2 = _interopRequireDefault(_autoprefixerStatic);
 	
-	var _warning = __webpack_require__(66);
+	var _warning = __webpack_require__(65);
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
@@ -34410,7 +34410,7 @@ webpackJsonp([4],[
 	});
 	exports.default = callOnce;
 	
-	var _warning = __webpack_require__(66);
+	var _warning = __webpack_require__(65);
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
@@ -46686,7 +46686,7 @@ webpackJsonp([4],[
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _reactRedux = __webpack_require__(65);
+	var _reactRedux = __webpack_require__(66);
 	
 	var _reduxDevtoolsInstrument = __webpack_require__(257);
 	
