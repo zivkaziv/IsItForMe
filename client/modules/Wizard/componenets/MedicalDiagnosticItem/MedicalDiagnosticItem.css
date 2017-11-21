@@ -1,0 +1,16 @@
+.medical-diagnostic-item{
+  height: 65px;
+  background: #FFF;
+  padding-left: 1em;
+  border-bottom: 1px solid #AAA;
+  display: inline-flex;
+  align-items: center;
+  min-width: 300px;
+  width: 100%;
+}
+
+@media (max-width: 650px){
+  .medical-diagnostic-item{
+    padding-left: 1em;
+  }
+}
