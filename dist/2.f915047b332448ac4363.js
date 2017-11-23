@@ -72,6 +72,10 @@ webpackJsonp([2],{
 	
 	var _logo_trans2 = _interopRequireDefault(_logo_trans);
 	
+	var _groceries = __webpack_require__(964);
+	
+	var _groceries2 = _interopRequireDefault(_groceries);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -87,7 +91,8 @@ webpackJsonp([2],{
 	
 	var HEADER_BAND_THEME = _extends({}, BASE_THEME, {
 	  baseFontSize: '18px',
-	  backgroundColor: '#71A2B6',
+	  // backgroundColor: '#71A2B6',
+	  backgroundColor: 'white',
 	  textColor: '#000000',
 	  primaryColor: '#000000',
 	  primaryContrastColor: '#71A2B6',
@@ -114,7 +119,7 @@ webpackJsonp([2],{
 	
 	var styles = {
 	  homePageContainer: {
-	    background: 'url("' + _background_mirror2.default + '") no-repeat center',
+	    // background: `url("${background}") no-repeat center`,
 	    // textAlign:'center',
 	    height: '100%'
 	  },
@@ -232,50 +237,66 @@ webpackJsonp([2],{
 	            null,
 	            _react2.default.createElement(
 	              'div',
-	              { style: styles.logoContainer },
+	              { style: {
+	                  display: 'flex',
+	                  alignItems: 'flex-end'
+	                } },
 	              _react2.default.createElement(
 	                'div',
-	                { style: styles.logoTitleContainer },
-	                _react2.default.createElement('img', { src: _logo_trans2.default, style: styles.logoImage })
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { style: styles.logoContainer },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { style: styles.logoTitleContainer },
+	                    _react2.default.createElement('img', { src: _logo_trans2.default, style: styles.logoImage })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { style: styles.callForActionContainer },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { style: {
+	                        fontSize: '30px'
+	                      } },
+	                    'All the products in one place'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { style: {
+	                        fontSize: '20px',
+	                        marginBottom: '20px'
+	                      } },
+	                    'Easy to understand if it\'s fits for you or not'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { style: {
+	                        fontSize: '14px',
+	                        marginBottom: '10px'
+	                      } },
+	                    'Coming soon'
+	                  ),
+	                  _react2.default.createElement(_TextField2.default, {
+	                    hintText: 'Email',
+	                    onChange: this.emailHasChanged()
+	                  }),
+	                  _react2.default.createElement(_landricksComponents.CallToAction, {
+	                    wrapperStyle: {
+	                      backgroundColor: '#71A2B6',
+	                      color: 'white'
+	                    },
+	                    label: this.state.callToActionText,
+	                    onClick: this.registerUser })
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement('img', { src: _groceries2.default, style: { height: '300px' } })
 	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { style: styles.callForActionContainer },
-	              _react2.default.createElement(
-	                'div',
-	                { style: {
-	                    fontSize: '30px'
-	                  } },
-	                'All the products in one place'
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { style: {
-	                    fontSize: '20px',
-	                    marginBottom: '20px'
-	                  } },
-	                'Easy to understand if it\'s fits for you or not'
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { style: {
-	                    fontSize: '14px',
-	                    marginBottom: '10px'
-	                  } },
-	                'Coming soon'
-	              ),
-	              _react2.default.createElement(_TextField2.default, {
-	                hintText: 'Email',
-	                onChange: this.emailHasChanged()
-	              }),
-	              _react2.default.createElement(_landricksComponents.CallToAction, {
-	                wrapperStyle: {
-	                  backgroundColor: '#71A2B6',
-	                  color: 'white'
-	                },
-	                label: this.state.callToActionText,
-	                onClick: this.registerUser })
 	            )
 	          )
 	        ),
@@ -7580,6 +7601,13 @@ webpackJsonp([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "17d5c018528c84eac956cfcf1f56b896.jpg";
+
+/***/ },
+
+/***/ 964:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "a71ec9d0457a9962055c91fcd8e885f5.jpg";
 
 /***/ }
 

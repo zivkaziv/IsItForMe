@@ -40,6 +40,7 @@ import BoolLogoSvg from '../../../App/IconSvg'
 //images
 // Import Images
 import logoImageWhite from '../../images/logo_trans.png';
+import groceriesImage from '../../images/groceries.jpg';
 
 const BASE_THEME = {
   fontFamily: 'Lato',
@@ -49,7 +50,8 @@ const BASE_THEME = {
 const HEADER_BAND_THEME = {
   ...BASE_THEME,
   baseFontSize: '18px',
-  backgroundColor: '#71A2B6',
+  // backgroundColor: '#71A2B6',
+  backgroundColor: 'white',
   textColor: '#000000',
   primaryColor: '#000000',
   primaryContrastColor: '#71A2B6',
@@ -78,7 +80,7 @@ const LIGHT_BAND_THEME = {
 
 const styles = {
   homePageContainer:{
-    background: `url("${background}") no-repeat center`,
+    // background: `url("${background}") no-repeat center`,
     // textAlign:'center',
     height:'100%'
   },
@@ -182,42 +184,52 @@ class LandingPage extends Component {
               styles.homePageContainer
             }>
           <ThemePropagator>
-            <div style={styles.logoContainer}>
-              <div style={styles.logoTitleContainer} >
-                <img src={logoImageWhite} style={styles.logoImage} />
+            <div style={{
+              display:'flex',
+              alignItems:'flex-end'
+            }}>
+              <div>
+              <div style={styles.logoContainer}>
+                <div style={styles.logoTitleContainer} >
+                  <img src={logoImageWhite} style={styles.logoImage} />
+                </div>
+                {/*<div style={styles.logoTagline}>Find out if products matches your exact taste</div>*/}
               </div>
-              {/*<div style={styles.logoTagline}>Find out if products matches your exact taste</div>*/}
+              <div style={styles.callForActionContainer}>
+                <div style={{
+                  fontSize:'30px'
+                }}>All the products in one place</div>
+                <div style={{
+                  fontSize:'20px',
+                  marginBottom:'20px'
+                }}>Easy to understand if it's fits for you or not</div>
+                <div style={{
+                  fontSize:'14px',
+                  marginBottom:'10px'
+                }}>Coming soon</div>
+                {/*<Link to={'/wizard'} style={styles.callForAction}>*/}
+                <TextField
+                  hintText="Email"
+                  onChange={this.emailHasChanged()}
+                />
+                <CallToAction
+                  wrapperStyle={{
+                    backgroundColor:'#71A2B6',
+                    color:'white'
+                  }}
+                  label={this.state.callToActionText}
+                  onClick={this.registerUser}/>
+              {/*</Link>*/}
+              </div>
+              {/*<div style={{*/}
+                {/*textAlign: 'center',*/}
+                {/*fontSize:'14px'*/}
+              {/*}}>We don't save any information</div>*/}
             </div>
-            <div style={styles.callForActionContainer}>
-              <div style={{
-                fontSize:'30px'
-              }}>All the products in one place</div>
-              <div style={{
-                fontSize:'20px',
-                marginBottom:'20px'
-              }}>Easy to understand if it's fits for you or not</div>
-              <div style={{
-                fontSize:'14px',
-                marginBottom:'10px'
-              }}>Coming soon</div>
-              {/*<Link to={'/wizard'} style={styles.callForAction}>*/}
-              <TextField
-                hintText="Email"
-                onChange={this.emailHasChanged()}
-              />
-              <CallToAction
-                wrapperStyle={{
-                  backgroundColor:'#71A2B6',
-                  color:'white'
-                }}
-                label={this.state.callToActionText}
-                onClick={this.registerUser}/>
-            {/*</Link>*/}
+              <div>
+              <img src={groceriesImage} style={{ height:'300px'}} />
             </div>
-            {/*<div style={{*/}
-              {/*textAlign: 'center',*/}
-              {/*fontSize:'14px'*/}
-            {/*}}>We don't save any information</div>*/}
+            </div>
           </ThemePropagator>
             {/*theme={ HEADER_BAND_THEME }*/}
             {/*messageLevel1="Find now your medical rights"*/}
