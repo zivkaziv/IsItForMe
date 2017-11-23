@@ -122,6 +122,7 @@ webpackJsonp([2],{
 	    // background: `url("${background}") no-repeat center`,
 	    // textAlign:'center',
 	    height: '100%'
+	    // marginBottom:'100px'
 	  },
 	  logo: {
 	    position: 'fixed',
@@ -159,9 +160,9 @@ webpackJsonp([2],{
 	  },
 	  logoContainer: {},
 	  logoTitleContainer: {
-	    display: 'flex',
-	    alignItems: 'center',
-	    marginTop: '90px'
+	    // display:'flex',
+	    // alignItems:'center',
+	    // marginTop: '90px'
 	  },
 	  logoImage: {
 	    height: '90px'
@@ -239,7 +240,9 @@ webpackJsonp([2],{
 	              'div',
 	              { style: {
 	                  display: 'flex',
-	                  alignItems: 'flex-end'
+	                  alignItems: 'flex-end',
+	                  textAlign: 'center',
+	                  justifyContent: 'center'
 	                } },
 	              _react2.default.createElement(
 	                'div',

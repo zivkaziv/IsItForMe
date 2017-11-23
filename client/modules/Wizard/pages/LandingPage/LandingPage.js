@@ -83,6 +83,7 @@ const styles = {
     // background: `url("${background}") no-repeat center`,
     // textAlign:'center',
     height:'100%'
+    // marginBottom:'100px'
   },
   logo:{
     position:'fixed',
@@ -122,9 +123,9 @@ const styles = {
 
   },
   logoTitleContainer:{
-    display:'flex',
-    alignItems:'center',
-    marginTop: '90px'
+    // display:'flex',
+    // alignItems:'center',
+    // marginTop: '90px'
   },
   logoImage:{
     height:'90px'
@@ -186,7 +187,9 @@ class LandingPage extends Component {
           <ThemePropagator>
             <div style={{
               display:'flex',
-              alignItems:'flex-end'
+              alignItems:'flex-end',
+              textAlign:'center',
+              justifyContent:'center'
             }}>
               <div>
               <div style={styles.logoContainer}>

@@ -123,6 +123,7 @@ exports.modules = {
 	    // background: `url("${background}") no-repeat center`,
 	    // textAlign:'center',
 	    height: '100%'
+	    // marginBottom:'100px'
 	  },
 	  logo: {
 	    position: 'fixed',
@@ -160,9 +161,9 @@ exports.modules = {
 	  },
 	  logoContainer: {},
 	  logoTitleContainer: {
-	    display: 'flex',
-	    alignItems: 'center',
-	    marginTop: '90px'
+	    // display:'flex',
+	    // alignItems:'center',
+	    // marginTop: '90px'
 	  },
 	  logoImage: {
 	    height: '90px'
@@ -240,7 +241,9 @@ exports.modules = {
 	              'div',
 	              { style: {
 	                  display: 'flex',
-	                  alignItems: 'flex-end'
+	                  alignItems: 'flex-end',
+	                  textAlign: 'center',
+	                  justifyContent: 'center'
 	                } },
 	              _react2.default.createElement(
 	                'div',
