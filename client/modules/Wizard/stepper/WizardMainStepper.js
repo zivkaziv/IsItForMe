@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {
   Step,
   Stepper,
@@ -22,7 +22,7 @@ import StepSurvey from '../Steps/StepSurvey'
 /**
  * A contrived example using a transition between steps
  */
-class WizardMainStepper extends React.Component {
+class WizardMainStepper extends Component {
 
   state = {
     loading: false,

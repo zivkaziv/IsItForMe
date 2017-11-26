@@ -1,7 +1,9 @@
 /* eslint-disable global-require */
-import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import React, {Component} from 'react';
+import { Route, IndexRoute,Redirect } from 'react-router';
 import App from './modules/App/App';
+import Login from './modules/Login/Login';
+import Register from './modules/Register/Register';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -47,13 +49,12 @@ export default (
       }}
     />
     <Route
-      path="/landing"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/Wizard/pages/HomePage/HomePage').default);
-
-        });
-      }}
+      path="/login"
+      component={Login}
+    />
+    <Route
+      path="/register"
+      component={Register}
     />
     {/*<Route*/}
       {/*path="/landing2"*/}

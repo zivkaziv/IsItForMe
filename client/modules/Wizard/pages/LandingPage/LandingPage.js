@@ -1,5 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
+import MenuAppBar from '../../../MenuAppBar/MenuAppBar'
 import { connect } from 'react-redux';
 import {
   LandingCanvas,
@@ -336,8 +338,8 @@ LandingPage.childContextTypes = {
 };
 
 LandingPage.contextTypes = {
-  router: React.PropTypes.object,
-  mixpanel: React.PropTypes.object
+  router: PropTypes.object,
+  mixpanel: PropTypes.object
 };
 
 export default connect(mapStateToProps)(LandingPage);

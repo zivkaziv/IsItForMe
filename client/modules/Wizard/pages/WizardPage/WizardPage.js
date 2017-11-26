@@ -56,7 +56,7 @@ class WizardPage extends Component {
       <div style={{
         width:'100%'
       }}>
-        <Header/>
+        {/*<Header/>*/}
         <div style={styles.wizardContainer}>
           {(function(isMobile) {
             if (isMobile) {

@@ -35,6 +35,7 @@ import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
 import medicalRights from './routes/medicalrights.routes';
 import populateDB from './routes/populateDB.routes';
+import user from './routes/user.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
@@ -60,6 +61,7 @@ app.use(Express.static(path.resolve(__dirname, '../dist')));
 app.use('/api', posts);
 app.use('/api', medicalRights);
 app.use('/api', populateDB);
+app.use('/api', user);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
