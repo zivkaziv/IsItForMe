@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
 import IntlWrapper from '../client/modules/Intl/IntlWrapper';
+import jwt from 'jsonwebtoken';
 
 // Webpack Requirements
 import webpack from 'webpack';
@@ -20,6 +21,28 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
   app.use(webpackHotMiddleware(compiler));
 }
+
+app.use(function(req, res, next) {
+  req.isAuthenticated = function() {
+    var token = (req.headers.authorization && req.headers.authorization.split(' ')[1]) || (req.cookies &&  req.cookies.token);
+    try {
+      let tokenSecret = process.env.TOKEN_SECRET ? process.env.TOKEN_SECRET : 'zivIsTheKing';
+      return jwt.verify(token,  tokenSecret );
+    } catch (err) {
+      return false;
+    }
+  };
+
+  if (req.isAuthenticated()) {
+    var payload = req.isAuthenticated();
+    User.findById(payload.sub, function(err, user) {
+      req.user = user;
+      next();
+    });
+  } else {
+    next();
+  }
+});
 
 // React And Redux Setup
 import { configureStore } from '../client/store';

@@ -1,7 +1,7 @@
 exports.ids = [2];
 exports.modules = {
 
-/***/ 103:
+/***/ 129:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39,33 +39,41 @@ exports.modules = {
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRouter = __webpack_require__(3);
+	var _propTypes = __webpack_require__(6);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _reactRouter = __webpack_require__(2);
+	
+	var _MenuAppBar = __webpack_require__(64);
+	
+	var _MenuAppBar2 = _interopRequireDefault(_MenuAppBar);
 	
 	var _reactRedux = __webpack_require__(1);
 	
-	var _landricksComponents = __webpack_require__(111);
+	var _landricksComponents = __webpack_require__(137);
 	
 	var _background_mirror = '/' + "17d5c018528c84eac956cfcf1f56b896.jpg";
 	
 	var _background_mirror2 = _interopRequireDefault(_background_mirror);
 	
-	var _RaisedButton = __webpack_require__(44);
+	var _RaisedButton = __webpack_require__(61);
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _getMuiTheme = __webpack_require__(46);
+	var _getMuiTheme = __webpack_require__(23);
 	
 	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
 	
-	var _lightBaseTheme = __webpack_require__(45);
+	var _lightBaseTheme = __webpack_require__(22);
 	
 	var _lightBaseTheme2 = _interopRequireDefault(_lightBaseTheme);
 	
-	var _TextField = __webpack_require__(10);
+	var _TextField = __webpack_require__(11);
 	
 	var _TextField2 = _interopRequireDefault(_TextField);
 	
-	var _IconSvg = __webpack_require__(51);
+	var _IconSvg = __webpack_require__(62);
 	
 	var _IconSvg2 = _interopRequireDefault(_IconSvg);
 	
@@ -386,8 +394,8 @@ exports.modules = {
 	};
 	
 	LandingPage.contextTypes = {
-	  router: _react2.default.PropTypes.object,
-	  mixpanel: _react2.default.PropTypes.object
+	  router: _propTypes2.default.object,
+	  mixpanel: _propTypes2.default.object
 	};
 	
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(LandingPage);
